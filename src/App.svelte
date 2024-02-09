@@ -51,7 +51,17 @@
 	)}
 </script>
 
-<Modal {showModal} message="This is value of a prop" on:click={toggleModal}/>
+<Modal 
+	{showModal} 
+	on:click={toggleModal}
+>
+	<h3 slot="title">Modal title</h3>
+	<form>
+		<input type="text" name="type" placeholder="type"/>
+		<input type="text" name="capacity" placeholder="capacity"/>
+		<button>Add a car</button>
+	</form>
+</Modal>
 <main>
 	<button on:click|once={toggleModal}>Open Modal</button>
 	<h1>Name: {name}!</h1>

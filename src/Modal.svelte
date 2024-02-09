@@ -1,6 +1,5 @@
 <script>
     export let showModal = false;
-    export let message = "This is default";
     export let isPromo = false;
 </script>
 
@@ -8,7 +7,8 @@
    <!-- svelte-ignore a11y-click-events-have-key-events -->
    <div class="backdrop" class:promo={isPromo} on:click|self>
         <div class="modal" >
-            <p>{message}</p>
+            <slot name="title"></slot>
+            <slot></slot>
         </div>
     </div> 
 {/if}
