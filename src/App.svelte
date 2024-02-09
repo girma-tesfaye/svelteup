@@ -1,6 +1,10 @@
 <script>
 	import Modal from "./Modal.svelte";
 	let name = "Girma";
+	let showModal = false;
+	const toggleModal = () => {
+		showModal = !showModal
+	}
 	//let role = "Sr. Dev";
 	// let color = "pink";
 	// let size = "Big";
@@ -47,8 +51,9 @@
 	)}
 </script>
 
-<Modal showModal={true} message="This is value of a prop"/>
+<Modal {showModal} message="This is value of a prop" on:click={toggleModal}/>
 <main>
+	<button on:click={toggleModal}>Open Modal</button>
 	<h1>Name: {name}!</h1>
 	<!-- <p>{description}</p> -->
 	<!-- <button style="color: {color}" on:click={changeColor}>Change color</button> -->
