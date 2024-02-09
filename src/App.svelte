@@ -53,7 +53,7 @@
 
 <Modal {showModal} message="This is value of a prop" on:click={toggleModal}/>
 <main>
-	<button on:click={toggleModal}>Open Modal</button>
+	<button on:click|once={toggleModal}>Open Modal</button>
 	<h1>Name: {name}!</h1>
 	<!-- <p>{description}</p> -->
 	<!-- <button style="color: {color}" on:click={changeColor}>Change color</button> -->
