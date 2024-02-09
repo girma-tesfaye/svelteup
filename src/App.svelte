@@ -56,6 +56,11 @@
 	{#each cars as car (car.capacity)}
 		<div>
 			<h4>{car.type}</h4>
+			{#if car.capacity === 3}
+				<p>This is highch</p>
+			{:else if car.capacity === 5 }
+				<p>This is minivan</p>
+			{/if}
 			<p>{car.color}</p>
 			<p>Registration date: {car.registration}</p>
 			<p>{car.capacity}</p>
