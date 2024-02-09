@@ -1,4 +1,5 @@
 <script>
+	import Modal from "./Modal.svelte";
 	let name = "Girma";
 	//let role = "Sr. Dev";
 	// let color = "pink";
@@ -46,6 +47,7 @@
 	)}
 </script>
 
+<Modal showModal={true} message="This is value of a prop"/>
 <main>
 	<h1>Name: {name}!</h1>
 	<!-- <p>{description}</p> -->
