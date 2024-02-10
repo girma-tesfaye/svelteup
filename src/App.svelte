@@ -1,5 +1,6 @@
 <script>
-	import Modal from "./Modal.svelte";
+	import AddCarForm from "./AddCarForm.svelte";
+import Modal from "./Modal.svelte";
 	let name = "Girma";
 	let showModal = false;
 	const toggleModal = () => {
@@ -55,12 +56,7 @@
 	{showModal} 
 	on:click={toggleModal}
 >
-	<h3 slot="title">Modal title</h3>
-	<form>
-		<input type="text" name="type" placeholder="type"/>
-		<input type="text" name="capacity" placeholder="capacity"/>
-		<button>Add a car</button>
-	</form>
+	<AddCarForm/>
 </Modal>
 <main>
 	<button on:click|once={toggleModal}>Open Modal</button>
