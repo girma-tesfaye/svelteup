@@ -32,19 +32,22 @@ import Modal from "./Modal.svelte";
 			"color": "purple",
 			"type": "minivan",
 			"registration": new Date('2017-01-03'),
-			"capacity": 7
+			"capacity": 7,
+			"id": 2
 		},
 		{
 			"color": "red",
 			"type": "station wagon",
 			"registration": new Date('2018-03-03'),
-			"capacity": 5
+			"capacity": 5,
+			"id": 4
 		},
 		{
 			"color": "black",
 			"type": "highchi",
 			"registration": new Date('2019-05-03'),
-			"capacity": 3
+			"capacity": 3,
+			"id": 6
 		}
 	]
 	const deleteCar = (capacity) => {
@@ -70,7 +73,7 @@ import Modal from "./Modal.svelte";
 	<!-- <input type="text" on:input={inputRole} value={role}/> -->
 	<!-- <input type="text" bind:value={color}/> -->
 	<!-- <input type="text" bind:value={size}/> -->
-	{#each cars as car (car.capacity)}
+	{#each cars as car (car.registration)}
 		<div>
 			<h4>{car.type}</h4>
 			{#if car.capacity === 3}

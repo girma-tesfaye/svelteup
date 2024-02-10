@@ -4,8 +4,9 @@
     const dispatch = createEventDispatcher();
     
     let type;
-    let registrationDate;
+    let registration;
     let capacity;
+    let color;
     // let bmw = false;
     // let tesla = false;
     // let vw = false;
@@ -13,10 +14,10 @@
     const hadleSubmit = () => {
         const car = {
             type,
-            registrationDate,
+            registration,
             capacity,
-            cars,
-            id: Math.random(),
+            color,
+            id: Math.random()*10000,
         }
         dispatch('addCar', car)
     }
@@ -33,18 +34,21 @@
         </select>
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Registration date</label>
-        <input type="date" name="registrationDate" bind:value={registrationDate} placeholder="Date"/>
+        <input type="date" name="registration" bind:value={registration} placeholder="Date"/>
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Capacity</label>
 		<input type="number" name="capacity" bind:value={capacity} placeholder="capacity"/>
         <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label>Cars</label>
+        <label>Color</label>
+		<input type="text" name="color" bind:value={color} placeholder="Color"/>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <!-- <label>Cars</label> -->
         <!-- <input type="checkbox" bind:checked={bmw}/>BMW<br/>
         <input type="checkbox" bind:checked={tesla}/>Tesla<br/>
         <input type="checkbox" bind:checked={vw}/>VW<br/> -->
-        <input type="checkbox" bind:group={cars} value="bmw"/>BMW<br/>
+        <!-- <input type="checkbox" bind:group={cars} value="bmw"/>BMW<br/>
         <input type="checkbox" bind:group={cars} value="tesla"/>Tesla<br/>
-        <input type="checkbox" bind:group={cars} value="vw"/>VW<br/>
+        <input type="checkbox" bind:group={cars} value="vw"/>VW<br/> -->
 		<button>Add a car</button>
 	</form>
 </div>
