@@ -1,17 +1,28 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+    
     let type;
     let registrationDate;
     let capacity;
-    let bmw = false;
-    let tesla = false;
-    let vw = false;
+    // let bmw = false;
+    // let tesla = false;
+    // let vw = false;
     let cars = [];
-    const addCar = () => {
-        console.log(type, registrationDate, capacity, cars);
+    const hadleSubmit = () => {
+        const car = {
+            type,
+            registrationDate,
+            capacity,
+            cars,
+            id: Math.random(),
+        }
+        dispatch('addCar', car)
     }
 </script>
 <div>
-	<form on:submit|preventDefault={addCar}>
+	<form on:submit|preventDefault={hadleSubmit}>
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>type</label>
 		<!-- <input type="text" name="type" bind:value={type} placeholder="type"/> -->

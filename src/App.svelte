@@ -50,13 +50,17 @@ import Modal from "./Modal.svelte";
 	const deleteCar = (capacity) => {
 		cars = cars.filter((car) => car.capacity != capacity 
 	)}
+	const addCar = (e) => {
+		const newCar =  e.detail;
+		cars = [newCar, ...cars]
+	}
 </script>
 
 <Modal 
 	{showModal} 
 	on:click={toggleModal}
 >
-	<AddCarForm/>
+	<AddCarForm on:addCar={addCar}/>
 </Modal>
 <main>
 	<button on:click|once={toggleModal}>Open Modal</button>
